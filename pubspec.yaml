@@ -48,7 +48,7 @@ dependencies:
   uuid: ^3.0.4
   dio: ^4.0.0
   brasil_fields: ^1.1.4
-  geolocator: ^7.6.0
+  geolocator: ^7.6.2
   sliding_up_panel: ^2.0.0+1
   screenshot: ^1.2.3
   image_gallery_saver: ^1.6.9
