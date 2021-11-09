@@ -5,7 +5,11 @@ import '../../models/page_manager.dart';
 
 class DrawerTile extends StatelessWidget {
   const DrawerTile(
-      {required this.iconData, required this.title, required this.page});
+      {Key? key,
+      required this.iconData,
+      required this.title,
+      required this.page})
+      : super(key: key);
 
   final IconData iconData;
   final String title;

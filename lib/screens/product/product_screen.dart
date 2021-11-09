@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 import 'components/size_widget.dart';
 
 class ProductScreen extends StatelessWidget {
-  const ProductScreen(this.product);
+  const ProductScreen(this.product, {Key? key}) : super(key: key);
   final Product product;
 
   @override
@@ -27,7 +27,7 @@ class ProductScreen extends StatelessWidget {
               builder: (_, userManager, __) {
                 if (userManager.adminEnabled && !product.deleted!) {
                   return IconButton(
-                    icon: Icon(Icons.edit),
+                    icon: const Icon(Icons.edit),
                     onPressed: () {
                       Navigator.of(context).pushReplacementNamed(
                         '/edit_product',
@@ -64,7 +64,7 @@ class ProductScreen extends StatelessWidget {
                 children: [
                   Text(
                     product.name!,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w600,
                     ),
@@ -85,8 +85,8 @@ class ProductScreen extends StatelessWidget {
                       color: primaryColor,
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 16, bottom: 8),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 16, bottom: 8),
                     child: Text(
                       'Descrição',
                       style: TextStyle(
@@ -97,13 +97,13 @@ class ProductScreen extends StatelessWidget {
                   ),
                   Text(
                     product.description!,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                     ),
                   ),
                   if (product.deleted!)
-                    Padding(
-                      padding: const EdgeInsets.only(top: 16, bottom: 8),
+                    const Padding(
+                      padding: EdgeInsets.only(top: 16, bottom: 8),
                       child: Text(
                         'Este produto não está mais disponível.',
                         style: TextStyle(
@@ -114,8 +114,8 @@ class ProductScreen extends StatelessWidget {
                       ),
                     )
                   else ...[
-                    Padding(
-                      padding: const EdgeInsets.only(top: 16, bottom: 8),
+                    const Padding(
+                      padding: EdgeInsets.only(top: 16, bottom: 8),
                       child: Text(
                         'Tamanhos',
                         style: TextStyle(
@@ -138,6 +138,7 @@ class ProductScreen extends StatelessWidget {
                       builder: (_, userManager, product, __) {
                         return SizedBox(
                           height: 44,
+                          // ignore: deprecated_member_use
                           child: RaisedButton(
                             onPressed: product.selectedSize != null &&
                                     product.deleted == false
@@ -158,7 +159,7 @@ class ProductScreen extends StatelessWidget {
                               userManager.isLoggedIn
                                   ? 'Adicionar ao Carrinho'
                                   : 'Entre para Comprar',
-                              style: TextStyle(fontSize: 18),
+                              style: const TextStyle(fontSize: 18),
                             ),
                           ),
                         );

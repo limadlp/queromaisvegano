@@ -4,6 +4,8 @@ import 'package:queromaisvegano/models/section.dart';
 import 'package:provider/provider.dart';
 
 class AddSectionWidget extends StatelessWidget {
+  const AddSectionWidget({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final homeManager = context.watch<HomeManager>();
@@ -11,6 +13,7 @@ class AddSectionWidget extends StatelessWidget {
     return Row(
       children: [
         Expanded(
+          // ignore: deprecated_member_use
           child: FlatButton(
             onPressed: () {
               homeManager.addSection(Section(type: 'List'));
@@ -20,6 +23,7 @@ class AddSectionWidget extends StatelessWidget {
           ),
         ),
         Expanded(
+          // ignore: deprecated_member_use
           child: FlatButton(
             onPressed: () {
               homeManager.addSection(Section(type: 'Staggered'));

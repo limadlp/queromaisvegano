@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:queromaisvegano/models/order.dart';
 
 class CancelOrderDialog extends StatefulWidget {
-  const CancelOrderDialog(this.order);
+  const CancelOrderDialog(this.order, {Key? key}) : super(key: key);
   final Order? order;
 
   @override
@@ -31,7 +31,7 @@ class _CancelOrderDialogState extends State<CancelOrderDialog> {
                 padding: const EdgeInsets.only(top: 8.0),
                 child: Text(
                   error!,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.red,
                   ),
                 ),
@@ -39,6 +39,7 @@ class _CancelOrderDialogState extends State<CancelOrderDialog> {
           ],
         ),
         actions: [
+          // ignore: deprecated_member_use
           FlatButton(
             onPressed: !loading
                 ? () {
@@ -47,6 +48,7 @@ class _CancelOrderDialogState extends State<CancelOrderDialog> {
                 : null,
             child: const Text('Voltar'),
           ),
+          // ignore: deprecated_member_use
           FlatButton(
             onPressed: !loading
                 ? () async {

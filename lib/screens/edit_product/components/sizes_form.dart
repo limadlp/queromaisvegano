@@ -6,7 +6,7 @@ import 'package:queromaisvegano/models/product.dart';
 import 'edit_item_size.dart';
 
 class SizesForm extends StatelessWidget {
-  const SizesForm(this.product);
+  const SizesForm(this.product, {Key? key}) : super(key: key);
   final Product product;
 
   @override
@@ -22,7 +22,7 @@ class SizesForm extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Expanded(
+                  const Expanded(
                     child: Text(
                       'Tamanhos',
                       style: TextStyle(

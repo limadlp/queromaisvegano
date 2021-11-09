@@ -8,7 +8,7 @@ import 'item_tile.dart';
 
 class SectionList extends StatelessWidget {
   final Section section;
-  const SectionList(this.section);
+  const SectionList(this.section, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class SectionList extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SectionHeader(),
+            const SectionHeader(),
             SizedBox(
                 height: 150,
                 child: Consumer<Section>(
@@ -32,7 +32,7 @@ class SectionList extends StatelessWidget {
                         if (index < section.items!.length) {
                           return ItemTile(section.items![index]);
                         } else {
-                          return AddTileWidget();
+                          return const AddTileWidget();
                         }
                       },
                       separatorBuilder: (_, __) => const SizedBox(

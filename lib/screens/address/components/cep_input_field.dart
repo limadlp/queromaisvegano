@@ -7,7 +7,7 @@ import 'package:queromaisvegano/models/cart_manager.dart';
 import 'package:provider/provider.dart';
 
 class CepInputField extends StatefulWidget {
-  const CepInputField(this.address);
+  const CepInputField(this.address, {Key? key}) : super(key: key);
   final Address address;
 
   @override
@@ -24,7 +24,7 @@ class _CepInputFieldState extends State<CepInputField> {
 
     //cepController.text = address.zipCode ?? '';
 
-    if (widget.address.zipCode == null)
+    if (widget.address.zipCode == null) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -39,9 +39,11 @@ class _CepInputFieldState extends State<CepInputField> {
             ],
             keyboardType: TextInputType.number,
             validator: (cep) {
-              if (cep!.isEmpty)
+              if (cep!.isEmpty) {
                 return 'Campo obrigatório';
-              else if (cep.length != 10) return 'CEP Inválido';
+              } else if (cep.length != 10) {
+                return 'CEP Inválido';
+              }
               return null;
             },
           ),
@@ -50,6 +52,7 @@ class _CepInputFieldState extends State<CepInputField> {
               valueColor: AlwaysStoppedAnimation(primaryColor),
               backgroundColor: Colors.transparent,
             ),
+          // ignore: deprecated_member_use
           RaisedButton(
             onPressed: !cartManager.loading
                 ? () async {
@@ -76,7 +79,7 @@ class _CepInputFieldState extends State<CepInputField> {
           ),
         ],
       );
-    else
+    } else {
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 4),
         child: Row(
@@ -101,5 +104,6 @@ class _CepInputFieldState extends State<CepInputField> {
           ],
         ),
       );
+    }
   }
 }

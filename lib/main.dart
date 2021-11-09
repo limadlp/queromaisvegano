@@ -125,23 +125,22 @@ class MyApp extends StatelessWidget {
                   builder: (_) =>
                       ConfirmationScreen(settings.arguments as Order?));
             case '/select_product':
-              return MaterialPageRoute(builder: (_) => SelectProductScreen());
+              return MaterialPageRoute(
+                  builder: (_) => const SelectProductScreen());
             case '/product':
               return MaterialPageRoute(
                   builder: (_) => ProductScreen(settings.arguments as Product));
             case '/login':
-              return MaterialPageRoute(builder: (_) => LoginScreen());
+              return MaterialPageRoute(builder: (_) => const LoginScreen());
             case '/signup':
               return MaterialPageRoute(builder: (_) => SignUpScreen());
             case '/':
             default:
               return MaterialPageRoute(
-                  builder: (_) => BaseScreen(), settings: settings);
+                  builder: (_) => const BaseScreen(), settings: settings);
           }
         },
       ),
     );
   }
 }
-
-//TODO: Conversão de vírgula para ponto ao cadastrar produto.

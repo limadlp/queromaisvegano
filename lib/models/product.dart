@@ -6,14 +6,19 @@ import 'package:flutter/cupertino.dart';
 import 'package:uuid/uuid.dart';
 import 'item_size.dart';
 
-class Product extends ChangeNotifier{
-
-  Product({this.id, this.name, this.description, this.images, this.sizes, this.deleted = false}){
+class Product extends ChangeNotifier {
+  Product(
+      {this.id,
+      this.name,
+      this.description,
+      this.images,
+      this.sizes,
+      this.deleted = false}) {
     images = images ?? [];
     sizes = sizes ?? [];
   }
 
-  Product.fromDocument(DocumentSnapshot? document){
+  Product.fromDocument(DocumentSnapshot? document) {
     id = document!.id;
     name = document['name'] as String;
     description = document['description'] as String;
@@ -29,12 +34,10 @@ class Product extends ChangeNotifier{
 
      */
     //deleted = false;
-    sizes = (document['sizes'] as List<dynamic>? ?? []).map(
-        (s) => ItemSize.fromMap(s as Map<String, dynamic>)).toList();
-
+    sizes = (document['sizes'] as List<dynamic>? ?? [])
+        .map((s) => ItemSize.fromMap(s as Map<String, dynamic>))
+        .toList();
   }
-
-
 
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
   final FirebaseStorage storage = FirebaseStorage.instance;
@@ -55,7 +58,7 @@ class Product extends ChangeNotifier{
 
   bool _loading = false;
   bool get loading => _loading;
-  set loading(bool value){
+  set loading(bool value) {
     _loading = value;
     notifyListeners();
   }
@@ -63,96 +66,97 @@ class Product extends ChangeNotifier{
   ItemSize? _selectedSize;
   ItemSize? get selectedSize => _selectedSize;
 
-  set selectedSize(ItemSize? value){
+  set selectedSize(ItemSize? value) {
     _selectedSize = value;
     notifyListeners();
   }
 
   int get totalStock {
     int stock = 0;
-    for(final size in sizes!){
+    for (final size in sizes!) {
       stock += size.stock!;
     }
     return stock;
   }
 
-  bool get hasStock{
+  bool get hasStock {
     return totalStock > 0 && !deleted!;
   }
 
-  num get basePrice{
+  num get basePrice {
     num lowest = double.infinity;
-    for(final size in sizes!){
-      if(size.price! < lowest)
+    for (final size in sizes!) {
+      if (size.price! < lowest) {
         lowest = size.price!;
+      }
     }
     return lowest;
   }
 
-  ItemSize? findSize(String? name){
-    try{
+  ItemSize? findSize(String? name) {
+    try {
       return sizes!.firstWhere((s) => s.name == name);
-    } catch(e){
+    } catch (e) {
       return null;
     }
-
   }
 
-  List<Map<String, dynamic>> exportSizeList(){
+  List<Map<String, dynamic>> exportSizeList() {
     return sizes!.map((size) => size.toMap()).toList();
   }
 
   Future<void> save() async {
-      loading = true;
+    loading = true;
 
-      final Map<String, dynamic> data = {
-        'name' : name,
-        'description' : description,
-        'sizes' : exportSizeList(),
-        'deleted' : deleted,
-      };
-      if(id == null){
-        final doc = await firestore.collection('products').add(data);
-        id = doc.id;
+    final Map<String, dynamic> data = {
+      'name': name,
+      'description': description,
+      'sizes': exportSizeList(),
+      'deleted': deleted,
+    };
+    if (id == null) {
+      final doc = await firestore.collection('products').add(data);
+      id = doc.id;
+    } else {
+      await firestoreRef.update(data);
+    }
+
+    final List<String> updateImages = [];
+
+    for (final newImage in newImages!) {
+      if (images!.contains(newImage)) {
+        updateImages.add(newImage as String);
       } else {
-        await firestoreRef.update(data);
+        final UploadTask task =
+            storageRef.child(const Uuid().v1()).putFile(newImage as File);
+        final TaskSnapshot snapshot = await task;
+        final String url = await snapshot.ref.getDownloadURL();
+        updateImages.add(url);
       }
+    }
 
-      final List<String> updateImages = [];
-
-      for(final newImage in newImages!){
-        if(images!.contains(newImage)){
-          updateImages.add(newImage as String);
-        } else {
-          final UploadTask task = storageRef.child(Uuid().v1()).putFile(newImage as File);
-          final TaskSnapshot snapshot = await task;
-          final String url = await snapshot.ref.getDownloadURL();
-          updateImages.add(url);
+    for (final image in images!) {
+      if (!newImages!.contains(image) && image.contains('firebase')) {
+        try {
+          final ref = storage.refFromURL(image);
+          await ref.delete();
+        } catch (e) {
+          debugPrint('Falha ao deletar $image');
         }
       }
+    }
 
-      for(final image in images!){
-        if(!newImages!.contains(image) && image.contains('firebase')){
-          try{
-            final ref = storage.refFromURL(image);
-            await ref.delete();
-          } catch (e) {
-            debugPrint('Falha ao deletar $image');
-          }
-        }
-      }
+    await firestoreRef.update({'images': updateImages});
+    images = updateImages;
 
-      await firestoreRef.update({'images': updateImages});
-      images = updateImages;
-
-      loading = false;
+    loading = false;
   }
 
-  void delete(){
-    firestoreRef.update({'deleted' : true});
+  void delete() {
+    firestoreRef.update({'deleted': true});
   }
 
-  Product clone(){
+  Product clone() {
     return Product(
       id: id,
       name: name,

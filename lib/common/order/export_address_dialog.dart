@@ -7,7 +7,7 @@ import 'package:queromaisvegano/models/address.dart';
 import 'package:screenshot/screenshot.dart';
 
 class ExportAddressDialog extends StatelessWidget {
-  ExportAddressDialog(this.address);
+  ExportAddressDialog(this.address, {Key? key}) : super(key: key);
   final Address? address;
 
   final ScreenshotController screenshotController = ScreenshotController();
@@ -31,17 +31,16 @@ class ExportAddressDialog extends StatelessWidget {
       ),
       contentPadding: const EdgeInsets.fromLTRB(16, 16, 8, 0),
       actions: [
+        // ignore: deprecated_member_use
         FlatButton(
           textColor: Theme.of(context).primaryColor,
           onPressed: () async {
             Navigator.of(context).pop();
-            final file = await screenshotController
-                .capture()
-                .then((Uint8List? image) async {
+            await screenshotController.capture().then((Uint8List? image) async {
               await ImageGallerySaver.saveImage(image!);
             });
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-              content: Text(
+              content: const Text(
                 'Imagem salva na galeria.',
               ),
               backgroundColor: kMainColorDark,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:queromaisvegano/models/product.dart';
 
 class ProductListTile extends StatelessWidget {
-  const ProductListTile(this.product);
+  const ProductListTile(this.product, {Key? key}) : super(key: key);
 
   final Product product;
 
@@ -36,7 +36,7 @@ class ProductListTile extends StatelessWidget {
                   children: [
                     Text(
                       product.name!,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w800,
                       ),

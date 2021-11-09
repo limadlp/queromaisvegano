@@ -13,6 +13,8 @@ class CheckoutScreen extends StatelessWidget {
 
   final CreditCard? creditCard = CreditCard();
 
+  CheckoutScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProxyProvider<CartManager, CheckoutManager>(
@@ -35,11 +37,11 @@ class CheckoutScreen extends StatelessWidget {
                   return Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const CircularProgressIndicator(
+                      children: const [
+                        CircularProgressIndicator(
                           valueColor: AlwaysStoppedAnimation(Colors.white),
                         ),
-                        const SizedBox(
+                        SizedBox(
                           height: 16,
                         ),
                         Text(
@@ -62,7 +64,7 @@ class CheckoutScreen extends StatelessWidget {
                       CreditCardWidget(
                         creditCard,
                       ),
-                      CpfField(),
+                      const CpfField(),
                       PriceCard(
                         buttonText: 'Finalizar pedido',
                         onPressed: () {

@@ -32,7 +32,7 @@ class CheckoutManager extends ChangeNotifier {
       Function? onSuccess,
       Function? onPayFail}) async {
     loading = true;
-    print(creditCard!.toJson());
+    //print(creditCard!.toJson());
 
     final orderId = await _getOrderId();
 
@@ -63,7 +63,7 @@ class CheckoutManager extends ChangeNotifier {
 
     try {
       await cieloPayment.capture(payId!);
-      print('success');
+      //print('success');
     } catch (e) {
       onPayFail!(e);
       loading = false;
@@ -88,7 +88,7 @@ class CheckoutManager extends ChangeNotifier {
       final result = await firestore.runTransaction((tx) async {
         final doc = await tx.get(ref);
         final orderId = doc['current'] as int;
-        await tx.update(ref, {'current': orderId + 1});
+        tx.update(ref, {'current': orderId + 1});
         return {'orderId': orderId};
       });
       return result['orderId'] as int;

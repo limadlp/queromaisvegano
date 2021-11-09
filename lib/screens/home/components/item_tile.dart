@@ -10,7 +10,7 @@ import 'package:provider/provider.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class ItemTile extends StatelessWidget {
-  const ItemTile(this.item);
+  const ItemTile(this.item, {Key? key}) : super(key: key);
   final SectionItem item;
 
   @override
@@ -48,6 +48,7 @@ class ItemTile extends StatelessWidget {
                             )
                           : null,
                       actions: [
+                        // ignore: deprecated_member_use
                         FlatButton(
                           onPressed: () {
                             context.read<Section>().removeItem(item);
@@ -56,6 +57,7 @@ class ItemTile extends StatelessWidget {
                           child: const Text('Excluir'),
                           textColor: Colors.red,
                         ),
+                        // ignore: deprecated_member_use
                         FlatButton(
                           onPressed: () async {
                             if (product != null) {
@@ -77,7 +79,7 @@ class ItemTile extends StatelessWidget {
             }
           : null,
       child: ClipRRect(
-        borderRadius: BorderRadius.all(
+        borderRadius: const BorderRadius.all(
           Radius.circular(18),
         ),
         child: AspectRatio(

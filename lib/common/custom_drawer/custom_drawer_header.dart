@@ -22,7 +22,7 @@ class CustomDrawerHeader extends StatelessWidget {
                   'assets/img/logo3.png',
                   color: Colors.white,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
                 Align(

@@ -8,6 +8,8 @@ class SignUpScreen extends StatelessWidget {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final Usuario user = Usuario();
 
+  SignUpScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +22,7 @@ class SignUpScreen extends StatelessWidget {
       ),
       body: Center(
         child: Card(
-          margin: EdgeInsets.symmetric(horizontal: 16),
+          margin: const EdgeInsets.symmetric(horizontal: 16),
           child: Form(
             key: formKey,
             child: Consumer<UserManager>(builder: (_, userManager, __) {
@@ -33,9 +35,9 @@ class SignUpScreen extends StatelessWidget {
                         const InputDecoration(hintText: 'Nome Completo'),
                     enabled: !userManager.loading,
                     validator: (name) {
-                      if (name!.isEmpty)
+                      if (name!.isEmpty) {
                         return 'Campo obrigatório';
-                      else if (name.trim().split(' ').length <= 1) {
+                      } else if (name.trim().split(' ').length <= 1) {
                         return 'Preencha seu nome completo';
                       }
                       return null;
@@ -50,9 +52,11 @@ class SignUpScreen extends StatelessWidget {
                     decoration: const InputDecoration(hintText: 'E-mail'),
                     keyboardType: TextInputType.emailAddress,
                     validator: (email) {
-                      if (email!.isEmpty)
+                      if (email!.isEmpty) {
                         return 'Campo obrigatório';
-                      else if (!emailValid(email)) return 'E-mail inválido';
+                      } else if (!emailValid(email)) {
+                        return 'E-mail inválido';
+                      }
                       return null;
                     },
                     onSaved: (email) => user.email = email!,
@@ -65,9 +69,11 @@ class SignUpScreen extends StatelessWidget {
                     decoration: const InputDecoration(hintText: 'Senha'),
                     obscureText: true,
                     validator: (pass) {
-                      if (pass!.isEmpty)
+                      if (pass!.isEmpty) {
                         return 'Campo obrigatório';
-                      else if (pass.length < 6) return 'Senha muito curta';
+                      } else if (pass.length < 6) {
+                        return 'Senha muito curta';
+                      }
                       return null;
                     },
                     onSaved: (pass) {
@@ -83,9 +89,11 @@ class SignUpScreen extends StatelessWidget {
                         const InputDecoration(hintText: 'Repita a Senha'),
                     obscureText: true,
                     validator: (pass) {
-                      if (pass!.isEmpty)
+                      if (pass!.isEmpty) {
                         return 'Campo obrigatório';
-                      else if (pass.length < 6) return 'Senha muito curta';
+                      } else if (pass.length < 6) {
+                        return 'Senha muito curta';
+                      }
                       return null;
                     },
                     onSaved: (pass) {
@@ -95,6 +103,7 @@ class SignUpScreen extends StatelessWidget {
                   const SizedBox(
                     height: 16,
                   ),
+                  // ignore: deprecated_member_use
                   RaisedButton(
                     materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     color: Theme.of(context).primaryColor,
@@ -109,8 +118,8 @@ class SignUpScreen extends StatelessWidget {
 
                               if (user.password != user.confirmPassword) {
                                 ScaffoldMessenger.of(context)
-                                    .showSnackBar(SnackBar(
-                                  content: const Text(
+                                    .showSnackBar(const SnackBar(
+                                  content: Text(
                                     'Senhas não coincidem',
                                   ),
                                   backgroundColor: Colors.red,
@@ -135,12 +144,12 @@ class SignUpScreen extends StatelessWidget {
                             }
                           },
                     child: userManager.loading
-                        ? CircularProgressIndicator(
+                        ? const CircularProgressIndicator(
                             valueColor: AlwaysStoppedAnimation(
                               Colors.white,
                             ),
                           )
-                        : Text(
+                        : const Text(
                             'Criar Conta',
                             style: TextStyle(fontSize: 15),
                           ),

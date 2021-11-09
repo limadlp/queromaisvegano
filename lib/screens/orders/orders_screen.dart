@@ -8,10 +8,12 @@ import 'package:provider/provider.dart';
 import '../../common/order/order_tile.dart';
 
 class OrdersScreen extends StatelessWidget {
+  const OrdersScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: CustomDrawer(),
+      drawer: const CustomDrawer(),
       appBar: AppBar(
         title: const Text('Meus Pedidos'),
         centerTitle: true,
@@ -19,10 +21,10 @@ class OrdersScreen extends StatelessWidget {
       body: Consumer<OrdersManager>(
         builder: (_, ordersManager, __) {
           if (ordersManager.user == null) {
-            return LoginCard();
+            return const LoginCard();
           }
           if (ordersManager.orders.isEmpty) {
-            return EmptyCard(
+            return const EmptyCard(
               title: 'Nenhuma compra encontrada!',
               iconData: Icons.border_clear,
             );

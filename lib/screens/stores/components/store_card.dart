@@ -6,6 +6,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class StoreCard extends StatelessWidget {
+  // ignore: use_key_in_widget_constructors
   const StoreCard(this.store);
   final Store? store;
 
@@ -83,7 +84,7 @@ class StoreCard extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       child: Column(
         children: [
-          Container(
+          SizedBox(
             height: 200,
             child: Stack(
               fit: StackFit.expand,
@@ -96,9 +97,9 @@ class StoreCard extends StatelessWidget {
                   alignment: Alignment.topRight,
                   child: Container(
                     padding: const EdgeInsets.all(8),
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.white,
-                      borderRadius: const BorderRadius.only(
+                      borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(8),
                       ),
                     ),
@@ -127,7 +128,7 @@ class StoreCard extends StatelessWidget {
                     children: [
                       Text(
                         store!.name!,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontWeight: FontWeight.w800,
                           fontSize: 17,
                         ),

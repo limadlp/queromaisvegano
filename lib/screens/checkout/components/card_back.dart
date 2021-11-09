@@ -6,7 +6,8 @@ import 'package:queromaisvegano/screens/checkout/components/card_text_field.dart
 import '../../../const.dart';
 
 class CardBack extends StatelessWidget {
-  const CardBack({required this.cvvFocus, this.creditCard});
+  const CardBack({Key? key, required this.cvvFocus, this.creditCard})
+      : super(key: key);
   final FocusNode cvvFocus;
   final CreditCard? creditCard;
 

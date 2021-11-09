@@ -6,7 +6,7 @@ import 'package:queromaisvegano/screens/checkout/components/card_back.dart';
 import 'package:queromaisvegano/screens/checkout/components/card_front.dart';
 
 class CreditCardWidget extends StatefulWidget {
-  CreditCardWidget(this.creditCard);
+  const CreditCardWidget(this.creditCard, {Key? key}) : super(key: key);
 
   final CreditCard? creditCard;
 
@@ -76,6 +76,7 @@ class _CreditCardWidgetState extends State<CreditCardWidget> {
                 cvvFocus: cvvFocus,
               ),
             ),
+            // ignore: deprecated_member_use
             FlatButton(
               onPressed: () {
                 cardKey.currentState!.toggleCard();

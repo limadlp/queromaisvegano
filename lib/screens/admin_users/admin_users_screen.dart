@@ -12,7 +12,7 @@ class AdminUsersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: CustomDrawer(),
+        drawer: const CustomDrawer(),
         appBar: AppBar(
           title: const Text('Usuários'),
           centerTitle: true,
@@ -26,14 +26,14 @@ class AdminUsersScreen extends StatelessWidget {
               return ListTile(
                 title: Text(
                   adminUsersManager.users![index].name!,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.w800,
                     color: Colors.white,
                   ),
                 ),
                 subtitle: Text(
                   adminUsersManager.users![index].email!,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                   ),
                 ),
@@ -49,7 +49,7 @@ class AdminUsersScreen extends StatelessWidget {
             indexedHeight: (index) {
               return 80;
             },
-            highlightTextStyle: TextStyle(
+            highlightTextStyle: const TextStyle(
               color: Colors.white,
               fontSize: 20,
             ),

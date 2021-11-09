@@ -3,6 +3,8 @@ import 'package:queromaisvegano/models/product_manager.dart';
 import 'package:provider/provider.dart';
 
 class SelectProductScreen extends StatelessWidget {
+  const SelectProductScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

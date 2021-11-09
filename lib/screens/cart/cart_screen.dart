@@ -19,11 +19,11 @@ class CartScreen extends StatelessWidget {
       ),
       body: Consumer<CartManager>(builder: (_, cartManager, __) {
         if (cartManager.user == null) {
-          return LoginCard();
+          return const LoginCard();
         }
 
         if (cartManager.items.isEmpty) {
-          return EmptyCard(
+          return const EmptyCard(
             iconData: Icons.remove_shopping_cart,
             title: 'Nenhum produto no carrinho!',
           );

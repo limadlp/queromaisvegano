@@ -10,7 +10,7 @@ import 'item_tile.dart';
 
 class SectionStaggered extends StatelessWidget {
   final Section section;
-  const SectionStaggered(this.section);
+  const SectionStaggered(this.section, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +23,11 @@ class SectionStaggered extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SectionHeader(),
+            const SectionHeader(),
             Consumer<Section>(
               builder: (_, section, __) {
                 return StaggeredGridView.countBuilder(
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   padding: EdgeInsets.zero,
                   shrinkWrap: true,
                   crossAxisCount: 4,
@@ -40,7 +40,7 @@ class SectionStaggered extends StatelessWidget {
                         section.items![index],
                       );
                     } else {
-                      return AddTileWidget();
+                      return const AddTileWidget();
                     }
                   },
                   staggeredTileBuilder: (index) {

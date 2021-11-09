@@ -6,17 +6,19 @@ import 'package:provider/provider.dart';
 import 'components/store_card.dart';
 
 class StoresScreen extends StatelessWidget {
+  const StoresScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: CustomDrawer(),
+      drawer: const CustomDrawer(),
       appBar: AppBar(
         title: const Text('Lojas'),
         centerTitle: true,
       ),
       body: Consumer<StoresManager>(builder: (_, storesManager, __) {
         if (storesManager.stores!.isEmpty) {
-          return LinearProgressIndicator(
+          return const LinearProgressIndicator(
             valueColor: AlwaysStoppedAnimation(Colors.white),
             backgroundColor: Colors.transparent,
           );

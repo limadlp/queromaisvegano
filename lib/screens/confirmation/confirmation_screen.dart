@@ -3,14 +3,14 @@ import 'package:queromaisvegano/models/order.dart';
 import 'package:queromaisvegano/common/order/order_product_tile.dart';
 
 class ConfirmationScreen extends StatelessWidget {
-  const ConfirmationScreen(this.order);
+  const ConfirmationScreen(this.order, {Key? key}) : super(key: key);
   final Order? order;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Pedido Confirmado'),
+          title: const Text('Pedido Confirmado'),
           centerTitle: true,
         ),
         body: Center(
@@ -33,7 +33,7 @@ class ConfirmationScreen extends StatelessWidget {
                       ),
                       Text(
                         'R\$ ${order!.price!.toStringAsFixed(2).replaceAll('.', ',')}',
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontWeight: FontWeight.w600,
                           color: Colors.black,
                           fontSize: 14,

@@ -4,7 +4,7 @@ import 'package:queromaisvegano/models/cart_product.dart';
 import 'package:provider/provider.dart';
 
 class CartTile extends StatelessWidget {
-  const CartTile(this.cartProduct);
+  const CartTile(this.cartProduct, {Key? key}) : super(key: key);
 
   final CartProduct cartProduct;
 
@@ -37,7 +37,7 @@ class CartTile extends StatelessWidget {
                       children: [
                         Text(
                           cartProduct.product!.name!,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: 17.0,
                           ),
@@ -46,11 +46,11 @@ class CartTile extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(vertical: 8),
                           child: Text(
                             'Tamanho: ${cartProduct.size}',
-                            style: TextStyle(fontWeight: FontWeight.w300),
+                            style: const TextStyle(fontWeight: FontWeight.w300),
                           ),
                         ),
                         Consumer<CartProduct>(builder: (_, cartProduct, __) {
-                          if (cartProduct.hasStock!)
+                          if (cartProduct.hasStock!) {
                             return Text(
                               'R\$ ${cartProduct.unitPrice!.toStringAsFixed(2).replaceAll('.', ',')}',
                               style: TextStyle(
@@ -59,12 +59,13 @@ class CartTile extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                               ),
                             );
-                          else
-                            return Text('Sem estoque suficiente',
+                          } else {
+                            return const Text('Sem estoque suficiente',
                                 style: TextStyle(
                                   color: Colors.red,
                                   fontSize: 12,
                                 ));
+                          }
                         })
                       ],
                     ),

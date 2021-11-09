@@ -17,7 +17,7 @@ class AddressScreen extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          AddressCard(),
+          const AddressCard(),
           Consumer<CartManager>(
             builder: (_, cartManager, __) {
               return PriceCard(

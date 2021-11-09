@@ -8,6 +8,8 @@ import 'package:queromaisvegano/screens/edit_product/components/image_source_she
 import 'package:provider/provider.dart';
 
 class AddTileWidget extends StatelessWidget {
+  const AddTileWidget({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final section = context.watch<Section>();
@@ -21,22 +23,23 @@ class AddTileWidget extends StatelessWidget {
       aspectRatio: 1,
       child: GestureDetector(
         onTap: () {
-          if (Platform.isAndroid)
+          if (Platform.isAndroid) {
             showModalBottomSheet(
                 context: context,
                 builder: (_) => ImageSourceSheet(
                       onImageSelected: onImageSelected,
                     ));
-          else if (Platform.isIOS)
+          } else if (Platform.isIOS) {
             showCupertinoModalPopup(
                 context: context,
                 builder: (_) => ImageSourceSheet(
                       onImageSelected: onImageSelected,
                     ));
+          }
         },
         child: Container(
           color: Colors.white.withAlpha(30),
-          child: Icon(
+          child: const Icon(
             Icons.add,
             color: Colors.white,
           ),

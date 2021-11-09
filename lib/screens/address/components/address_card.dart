@@ -7,6 +7,8 @@ import 'address_input_field.dart';
 import 'cep_input_field.dart';
 
 class AddressCard extends StatelessWidget {
+  const AddressCard({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -23,7 +25,7 @@ class AddressCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Endereço de Entrega',
                     style: TextStyle(
                       fontWeight: FontWeight.w600,

@@ -4,7 +4,8 @@ import 'package:queromaisvegano/models/cart_manager.dart';
 import 'package:provider/provider.dart';
 
 class PriceCard extends StatelessWidget {
-  const PriceCard({this.buttonText, this.onPressed});
+  const PriceCard({Key? key, this.buttonText, this.onPressed})
+      : super(key: key);
 
   final String? buttonText;
   final VoidCallback? onPressed;
@@ -23,7 +24,7 @@ class PriceCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
+            const Text(
               'Resumo do Pedido',
               style: TextStyle(
                 fontWeight: FontWeight.w600,
@@ -59,7 +60,7 @@ class PriceCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
+                const Text(
                   'Total',
                   style: TextStyle(fontWeight: FontWeight.w500),
                 ),
@@ -75,6 +76,7 @@ class PriceCard extends StatelessWidget {
             const SizedBox(
               height: 8,
             ),
+            // ignore: deprecated_member_use
             RaisedButton(
               color: kMainColor,
               disabledColor: Theme.of(context).primaryColor.withAlpha(100),

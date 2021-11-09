@@ -5,7 +5,7 @@ import 'package:queromaisvegano/models/product.dart';
 import 'package:provider/provider.dart';
 
 class SizeWidget extends StatelessWidget {
-  const SizeWidget({required this.size});
+  const SizeWidget({Key? key, required this.size}) : super(key: key);
   final ItemSize size;
 
   @override
@@ -14,12 +14,13 @@ class SizeWidget extends StatelessWidget {
     final selected = size == product.selectedSize;
 
     Color color;
-    if (!size.hasStock)
+    if (!size.hasStock) {
       color = Colors.red.withAlpha(40);
-    else if (selected)
+    } else if (selected) {
       color = kMainColorDark;
-    else
+    } else {
       color = Colors.grey.shade400;
+    }
 
     return GestureDetector(
       onTap: () {
@@ -41,7 +42,7 @@ class SizeWidget extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
               child: Text(
                 size.name!,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
                 ),
               ),

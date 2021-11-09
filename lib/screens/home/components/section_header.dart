@@ -5,6 +5,8 @@ import 'package:queromaisvegano/models/section.dart';
 import 'package:provider/provider.dart';
 
 class SectionHeader extends StatelessWidget {
+  const SectionHeader({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final homeManager = context.watch<HomeManager>();
@@ -28,7 +30,7 @@ class SectionHeader extends StatelessWidget {
                     isDense: true,
                     border: InputBorder.none,
                   ),
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.w800,
                     fontSize: 18,
@@ -62,7 +64,7 @@ class SectionHeader extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 8.0),
         child: Text(
           section.name ?? '',
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.w800,
             fontSize: 18,

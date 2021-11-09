@@ -15,6 +15,8 @@ import 'package:queromaisvegano/screens/stores/stores_screen.dart';
 import 'package:provider/provider.dart';
 
 class BaseScreen extends StatefulWidget {
+  const BaseScreen({Key? key}) : super(key: key);
+
   @override
   _BaseScreenState createState() => _BaseScreenState();
 }
@@ -66,7 +68,7 @@ class _BaseScreenState extends State<BaseScreen> {
       isDismissible: true,
       backgroundColor: Theme.of(context).primaryColor,
       duration: const Duration(seconds: 5),
-      icon: Icon(
+      icon: const Icon(
         Icons.shopping_cart,
         color: Colors.white,
       ),
@@ -82,13 +84,13 @@ class _BaseScreenState extends State<BaseScreen> {
           controller: pageController,
           physics: const NeverScrollableScrollPhysics(),
           children: [
-            HomeScreen(),
-            ProductsScreen(),
-            OrdersScreen(),
-            StoresScreen(),
+            const HomeScreen(),
+            const ProductsScreen(),
+            const OrdersScreen(),
+            const StoresScreen(),
             if (userManager.adminEnabled) ...[
-              AdminUsersScreen(),
-              AdminOrdersScreen(),
+              const AdminUsersScreen(),
+              const AdminOrdersScreen(),
             ]
           ],
         );

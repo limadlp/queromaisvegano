@@ -67,7 +67,7 @@ class Section extends ChangeNotifier {
     for (final item in items!) {
       if (item.image is File) {
         final UploadTask task =
-            storageRef.child(Uuid().v1()).putFile(item.image as File);
+            storageRef.child(const Uuid().v1()).putFile(item.image as File);
         final TaskSnapshot snapshot = await task;
         final String url = await snapshot.ref.getDownloadURL();
         item.image = url;

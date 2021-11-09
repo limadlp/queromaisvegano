@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:queromaisvegano/models/cart_product.dart';
 
 class OrderProductTile extends StatelessWidget {
-  const OrderProductTile(this.cartProduct);
+  const OrderProductTile(this.cartProduct, {Key? key}) : super(key: key);
   final CartProduct? cartProduct;
 
   @override
@@ -31,14 +31,14 @@ class OrderProductTile extends StatelessWidget {
                 children: [
                   Text(
                     cartProduct!.product!.name!,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: 17.0,
                     ),
                   ),
                   Text(
                     'Tamanho : ${cartProduct!.size}',
-                    style: TextStyle(fontWeight: FontWeight.w300),
+                    style: const TextStyle(fontWeight: FontWeight.w300),
                   ),
                   Text(
                     'R\$ ${(cartProduct!.fixedPrice ?? cartProduct!.unitPrice)!.toStringAsFixed(2).replaceAll('.', ',')}',

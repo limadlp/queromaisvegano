@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class LoginCard extends StatelessWidget {
+  const LoginCard({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -29,15 +31,14 @@ class LoginCard extends StatelessWidget {
                   ),
                 ),
               ),
+              // ignore: deprecated_member_use
               RaisedButton(
-                onPressed: (){
+                onPressed: () {
                   Navigator.of(context).pushNamed('/login');
                 },
                 color: Theme.of(context).primaryColor,
                 textColor: Colors.white,
-                child: const Text(
-                    'LOGIN'
-                ),
+                child: const Text('LOGIN'),
               ),
             ],
           ),

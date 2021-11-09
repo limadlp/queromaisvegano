@@ -9,12 +9,13 @@ import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class CardFront extends StatelessWidget {
   CardFront({
+    Key? key,
     required this.numberFocus,
     required this.dateFocus,
     required this.nameFocus,
     required this.finished,
     this.creditCard,
-  });
+  }) : super(key: key);
 
   final MaskTextInputFormatter dateFormatter = MaskTextInputFormatter(
     mask: '!#/####',
@@ -58,10 +59,12 @@ class CardFront extends StatelessWidget {
                       CartaoBancarioInputFormatter(),
                     ],
                     validator: (number) {
-                      if (number!.length != 19)
+                      if (number!.length != 19) {
                         return 'Inválido';
-                      else if (detectCCType(number) == CreditCardType.unknown)
+                      } else if (detectCCType(number) ==
+                          CreditCardType.unknown) {
                         return 'Inválido';
+                      }
                       return null;
                     },
                     onSubmitted: (_) {

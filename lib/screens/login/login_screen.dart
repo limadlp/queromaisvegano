@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_signin_button/button_list.dart';
-import 'package:flutter_signin_button/button_view.dart';
 import 'package:queromaisvegano/helpers/validators.dart';
 import 'package:queromaisvegano/models/user.dart';
 import 'package:queromaisvegano/models/user_manager.dart';
 import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {
+  const LoginScreen({Key? key}) : super(key: key);
+
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
@@ -30,12 +30,13 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         centerTitle: true,
         actions: [
+          // ignore: deprecated_member_use
           FlatButton(
             onPressed: () {
               Navigator.of(context).pushReplacementNamed('/signup');
             },
             textColor: Colors.white,
-            child: Text(
+            child: const Text(
               'CRIAR CONTA',
               style: TextStyle(fontSize: 14),
             ),
@@ -44,19 +45,19 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
       body: Center(
         child: Card(
-          margin: EdgeInsets.symmetric(horizontal: 16),
+          margin: const EdgeInsets.symmetric(horizontal: 16),
           child: Form(
             key: formKey,
             child: Consumer<UserManager>(
               builder: (_, userManager, __) {
                 return ListView(
-                  padding: EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(16),
                   shrinkWrap: true,
                   children: [
                     TextFormField(
                       controller: emailController,
                       enabled: !userManager.loading,
-                      decoration: InputDecoration(hintText: 'E-mail'),
+                      decoration: const InputDecoration(hintText: 'E-mail'),
                       keyboardType: TextInputType.emailAddress,
                       autocorrect: false,
                       validator: (email) {
@@ -66,34 +67,37 @@ class _LoginScreenState extends State<LoginScreen> {
                         return null;
                       },
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 16,
                     ),
                     TextFormField(
                       controller: passController,
                       enabled: !userManager.loading,
-                      decoration: InputDecoration(hintText: 'Senha'),
+                      decoration: const InputDecoration(hintText: 'Senha'),
                       autocorrect: false,
                       obscureText: true,
                       validator: (pass) {
-                        if (pass!.isEmpty || pass.length < 6)
+                        if (pass!.isEmpty || pass.length < 6) {
                           return 'Senha inválida';
+                        }
                         return null;
                       },
                     ),
                     Align(
                       alignment: Alignment.centerRight,
+                      // ignore: deprecated_member_use
                       child: FlatButton(
                         onPressed: () {},
                         padding: EdgeInsets.zero,
-                        child: Text(
+                        child: const Text(
                           'Esqueci minha senha',
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 16,
                     ),
+                    // ignore: deprecated_member_use
                     RaisedButton(
                       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       onPressed: userManager.loading
@@ -125,10 +129,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       disabledColor:
                           Theme.of(context).primaryColor.withAlpha(100),
                       child: userManager.loading
-                          ? CircularProgressIndicator(
+                          ? const CircularProgressIndicator(
                               valueColor: AlwaysStoppedAnimation(Colors.white),
                             )
-                          : Text(
+                          : const Text(
                               'Entrar',
                               style: TextStyle(
                                 fontSize: 15,

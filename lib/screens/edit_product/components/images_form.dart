@@ -9,7 +9,7 @@ import 'package:queromaisvegano/models/product.dart';
 import 'image_source_sheet.dart';
 
 class ImagesForm extends StatelessWidget {
-  const ImagesForm(this.product);
+  const ImagesForm(this.product, {Key? key}) : super(key: key);
   final Product product;
 
   @override
@@ -50,7 +50,7 @@ class ImagesForm extends StatelessWidget {
                       Align(
                         alignment: Alignment.topRight,
                         child: IconButton(
-                          icon: Icon(Icons.remove),
+                          icon: const Icon(Icons.remove),
                           color: Colors.red,
                           onPressed: () {
                             state.value!.remove(image);
@@ -64,22 +64,23 @@ class ImagesForm extends StatelessWidget {
                   ..add(Material(
                     color: Colors.grey[100],
                     child: IconButton(
-                      icon: Icon(Icons.add_a_photo),
+                      icon: const Icon(Icons.add_a_photo),
                       iconSize: 50,
                       color: Theme.of(context).primaryColor,
                       onPressed: () {
-                        if (Platform.isAndroid)
+                        if (Platform.isAndroid) {
                           showModalBottomSheet(
                               context: context,
                               builder: (_) => ImageSourceSheet(
                                     onImageSelected: onImageSelected,
                                   ));
-                        else if (Platform.isIOS)
+                        } else if (Platform.isIOS) {
                           showCupertinoModalPopup(
                               context: context,
                               builder: (_) => ImageSourceSheet(
                                     onImageSelected: onImageSelected,
                                   ));
+                        }
                       },
                     ),
                   )),

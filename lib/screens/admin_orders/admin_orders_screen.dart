@@ -9,6 +9,8 @@ import 'package:provider/provider.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class AdminOrdersScreen extends StatefulWidget {
+  const AdminOrdersScreen({Key? key}) : super(key: key);
+
   @override
   _AdminOrdersScreenState createState() => _AdminOrdersScreenState();
 }
@@ -19,7 +21,7 @@ class _AdminOrdersScreenState extends State<AdminOrdersScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: CustomDrawer(),
+      drawer: const CustomDrawer(),
       appBar: AppBar(
         title: const Text('Todos os Pedidos'),
         centerTitle: true,
@@ -40,7 +42,7 @@ class _AdminOrdersScreenState extends State<AdminOrdersScreen> {
                         Expanded(
                           child: Text(
                             'Pedidos de ${ordersManager.userFilter!.name}',
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontWeight: FontWeight.w800,
                               color: Colors.white,
                             ),
@@ -57,7 +59,7 @@ class _AdminOrdersScreenState extends State<AdminOrdersScreen> {
                     ),
                   ),
                 if (filteredOrders!.isEmpty)
-                  Expanded(
+                  const Expanded(
                     child: EmptyCard(
                       title: 'Nenhuma venda realizada!',
                       iconData: Icons.border_clear,

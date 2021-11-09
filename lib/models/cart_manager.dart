@@ -103,10 +103,11 @@ class CartManager extends ChangeNotifier {
   }
 
   void _updateCartProduct(CartProduct cartProduct) {
-    if (cartProduct.id != null)
+    if (cartProduct.id != null) {
       user!.cartReference
           .doc(cartProduct.id)
           .update(cartProduct.toCartItemMap());
+    }
   }
 
   bool? get isCartValid {

@@ -8,9 +8,10 @@ import 'components/images_form.dart';
 import 'components/sizes_form.dart';
 
 class EditProductScreen extends StatelessWidget {
-  EditProductScreen(Product? p)
+  EditProductScreen(Product? p, {Key? key})
       : editing = p != null,
-        product = (p != null ? p.clone() : Product());
+        product = (p != null ? p.clone() : Product()),
+        super(key: key);
 
   final Product? product;
   final bool editing;
@@ -28,14 +29,15 @@ class EditProductScreen extends StatelessWidget {
           actions: [
             if (editing)
               IconButton(
-                icon: Icon(Icons.delete),
+                icon: const Icon(Icons.delete),
                 onPressed: () {
                   showDialog(
                     context: context,
                     builder: (_) => AlertDialog(
-                      title: Text('Excluir Produto?'),
+                      title: const Text('Excluir Produto?'),
                       content: const Text('Esta ação não poderá ser desfeita!'),
                       actions: [
+                        // ignore: deprecated_member_use
                         FlatButton(
                           onPressed: () {
                             //print('qui');
@@ -45,6 +47,7 @@ class EditProductScreen extends StatelessWidget {
                           textColor: Theme.of(context).primaryColor,
                           child: const Text('Cancelar'),
                         ),
+                        // ignore: deprecated_member_use
                         FlatButton(
                           onPressed: () {
                             context.read<ProductManager>().delete(product!);
@@ -78,7 +81,7 @@ class EditProductScreen extends StatelessWidget {
                         hintText: 'Título',
                         border: InputBorder.none,
                       ),
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w600,
                       ),
@@ -106,8 +109,8 @@ class EditProductScreen extends StatelessWidget {
                         color: kMainColor,
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 16),
+                    const Padding(
+                      padding: EdgeInsets.only(top: 16),
                       child: Text(
                         'Descrição',
                         style: TextStyle(
@@ -144,6 +147,7 @@ class EditProductScreen extends StatelessWidget {
                       builder: (_, product, __) {
                         return SizedBox(
                           height: 44,
+                          // ignore: deprecated_member_use
                           child: RaisedButton(
                             color: kMainColor,
                             disabledColor: kMainColor.withAlpha(100),
@@ -162,7 +166,7 @@ class EditProductScreen extends StatelessWidget {
                                   }
                                 : null,
                             child: product.loading
-                                ? CircularProgressIndicator(
+                                ? const CircularProgressIndicator(
                                     valueColor: AlwaysStoppedAnimation(
                                       Colors.white,
                                     ),

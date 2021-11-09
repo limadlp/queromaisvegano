@@ -5,7 +5,7 @@ import 'package:queromaisvegano/models/cart_manager.dart';
 import 'package:provider/provider.dart';
 
 class AddressInputField extends StatelessWidget {
-  const AddressInputField(this.address);
+  const AddressInputField(this.address, {Key? key}) : super(key: key);
   final Address address;
 
   @override
@@ -16,7 +16,7 @@ class AddressInputField extends StatelessWidget {
     final primaryColor = Theme.of(context).primaryColor;
     final cartManager = context.watch<CartManager>();
 
-    if (address.zipCode != null && cartManager.deliveryPrice == null)
+    if (address.zipCode != null && cartManager.deliveryPrice == null) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -129,6 +129,7 @@ class AddressInputField extends StatelessWidget {
               valueColor: AlwaysStoppedAnimation(primaryColor),
               backgroundColor: Colors.transparent,
             ),
+          // ignore: deprecated_member_use
           RaisedButton(
             color: primaryColor,
             disabledColor: primaryColor.withAlpha(100),
@@ -154,14 +155,15 @@ class AddressInputField extends StatelessWidget {
           )
         ],
       );
-    else if (address.zipCode != null)
+    } else if (address.zipCode != null) {
       return Padding(
         padding: const EdgeInsets.only(bottom: 16),
         child:
             Text('${address.street}, ${address.number}\n${address.district}\n'
                 '${address.city} - ${address.state}'),
       );
-    else
+    } else {
       return Container();
+    }
   }
 }

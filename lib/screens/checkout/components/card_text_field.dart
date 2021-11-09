@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 
 class CardTextField extends StatelessWidget {
   const CardTextField({
+    Key? key,
     this.title,
     this.bold = false,
     this.hint,
@@ -15,9 +16,9 @@ class CardTextField extends StatelessWidget {
     this.onSubmitted,
     this.onSaved,
     this.initialValue,
-  }) : textInputAction = onSubmitted == null
-      ? TextInputAction.done
-      : TextInputAction.next;
+  })  : textInputAction =
+            onSubmitted == null ? TextInputAction.done : TextInputAction.next,
+        super(key: key);
 
   final String? title;
   final bool bold;
@@ -52,7 +53,7 @@ class CardTextField extends StatelessWidget {
                   children: [
                     Text(
                       title!,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 10,
                         fontWeight: FontWeight.w400,
                         color: Colors.white,

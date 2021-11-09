@@ -6,7 +6,8 @@ import 'export_address_dialog.dart';
 import 'order_product_tile.dart';
 
 class OrderTile extends StatelessWidget {
-  const OrderTile(this.order, {this.showControls = false});
+  const OrderTile(this.order, {Key? key, this.showControls = false})
+      : super(key: key);
   final Order? order;
   final bool showControls;
 
@@ -31,7 +32,7 @@ class OrderTile extends StatelessWidget {
                 ),
                 Text(
                   'R\$ ${order!.price!.toStringAsFixed(2).replaceAll('.', ',')}',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.w600,
                     color: Colors.black,
                     fontSize: 14,
@@ -63,6 +64,7 @@ class OrderTile extends StatelessWidget {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
+                  // ignore: deprecated_member_use
                   FlatButton(
                     onPressed: () {
                       showDialog(
@@ -74,14 +76,17 @@ class OrderTile extends StatelessWidget {
                     textColor: Colors.red,
                     child: const Text('Cancelar'),
                   ),
+                  // ignore: deprecated_member_use
                   FlatButton(
                     onPressed: order!.back,
                     child: const Text('Recuar'),
                   ),
+                  // ignore: deprecated_member_use
                   FlatButton(
                     onPressed: order!.advance,
                     child: const Text('Avançar'),
                   ),
+                  // ignore: deprecated_member_use
                   FlatButton(
                     onPressed: () {
                       showDialog(

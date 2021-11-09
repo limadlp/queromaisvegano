@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: CustomDrawer(),
+      drawer: const CustomDrawer(),
       body: Stack(
         children: [
           Container(
@@ -40,7 +40,7 @@ class HomeScreen extends StatelessWidget {
                 floating: true,
                 backgroundColor: Colors.transparent,
                 flexibleSpace: FlexibleSpaceBar(
-                  titlePadding: EdgeInsets.all(8),
+                  titlePadding: const EdgeInsets.all(8),
                   title: Image.asset(
                     'assets/img/logoa.png',
                     fit: BoxFit.cover,
@@ -50,7 +50,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 actions: [
                   IconButton(
-                    icon: Icon(Icons.shopping_cart),
+                    icon: const Icon(Icons.shopping_cart),
                     color: Colors.white,
                     onPressed: () => Navigator.of(context).pushNamed('/cart'),
                   ),
@@ -77,7 +77,7 @@ class HomeScreen extends StatelessWidget {
                         );
                       } else {
                         return IconButton(
-                          icon: Icon(Icons.edit),
+                          icon: const Icon(Icons.edit),
                           onPressed: homeManager.enterEditing,
                         );
                       }
@@ -89,7 +89,7 @@ class HomeScreen extends StatelessWidget {
               ),
               Consumer<HomeManager>(builder: (_, homeManager, __) {
                 if (homeManager.loading) {
-                  return SliverToBoxAdapter(
+                  return const SliverToBoxAdapter(
                     child: LinearProgressIndicator(
                       valueColor: AlwaysStoppedAnimation(Colors.white),
                       backgroundColor: Colors.transparent,
@@ -109,7 +109,7 @@ class HomeScreen extends StatelessWidget {
                   }
                 }).toList();
 
-                if (homeManager.editing) children.add(AddSectionWidget());
+                if (homeManager.editing) children.add(const AddSectionWidget());
 
                 return SliverList(
                   delegate: SliverChildListDelegate(children),

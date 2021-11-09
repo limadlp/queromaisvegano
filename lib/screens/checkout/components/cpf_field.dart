@@ -5,6 +5,8 @@ import 'package:queromaisvegano/models/user_manager.dart';
 import 'package:provider/provider.dart';
 
 class CpfField extends StatelessWidget {
+  const CpfField({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final userManager = context.watch<UserManager>();
@@ -24,6 +26,7 @@ class CpfField extends StatelessWidget {
               ),
             ),
             TextFormField(
+              // ignore: unnecessary_null_in_if_null_operators
               initialValue: userManager.user!.cpf ?? null,
               decoration: const InputDecoration(
                 hintText: '000.000.000-00',
@@ -35,9 +38,11 @@ class CpfField extends StatelessWidget {
                 CpfInputFormatter(),
               ],
               validator: (cpf) {
-                if (cpf!.isEmpty)
+                if (cpf!.isEmpty) {
                   return 'Campo Obrigatório';
-                else if (!CPFValidator.isValid(cpf)) return 'CPF Inválido';
+                } else if (!CPFValidator.isValid(cpf)) {
+                  return 'CPF Inválido';
+                }
                 return null;
               },
               onSaved: userManager.user!.setCpf,

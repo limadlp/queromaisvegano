@@ -1,4 +1,4 @@
-String getErrorString(String code){
+String getErrorString(String code) {
   switch (code) {
     case 'ERROR_WEAK_PASSWORD':
     case 'weak-password':
@@ -33,7 +33,6 @@ String getErrorString(String code){
       return 'Muitas solicitações. Tente novamente mais tarde.';
 
     case 'ERROR_OPERATION_NOT_ALLOWED':
-    case 'operation-not-allowed':
       return 'Operação não permitida.';
 
     case 'email-already-in-use':

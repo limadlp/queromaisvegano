@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 class EmptyCard extends StatelessWidget {
-
-  const EmptyCard({this.title, this.iconData});
+  const EmptyCard({Key? key, this.title, this.iconData}) : super(key: key);
 
   final String? title;
   final IconData? iconData;
@@ -20,10 +19,12 @@ class EmptyCard extends StatelessWidget {
             size: 80.0,
             color: Colors.white,
           ),
-          const SizedBox(height: 16.0,),
+          const SizedBox(
+            height: 16.0,
+          ),
           Text(
             title ?? '',
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 20.0,
               fontWeight: FontWeight.bold,
               color: Colors.white,
