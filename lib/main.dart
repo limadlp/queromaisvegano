@@ -29,10 +29,12 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -86,7 +88,7 @@ class MyApp extends StatelessWidget {
           ),
           primarySwatch: Colors.grey,
           primaryColor: kMainColor,
-          primaryTextTheme: TextTheme(
+          primaryTextTheme: const TextTheme(
             headline6: TextStyle(color: Colors.white),
             caption: TextStyle(color: Colors.white),
           ),
@@ -94,8 +96,8 @@ class MyApp extends StatelessWidget {
             color: Colors.white,
           ),
           hintColor: kMainColorAlpha,
-          inputDecorationTheme: new InputDecorationTheme(
-              labelStyle: new TextStyle(color: kMainColorAlpha)),
+          inputDecorationTheme: InputDecorationTheme(
+              labelStyle: TextStyle(color: kMainColorAlpha)),
           scaffoldBackgroundColor: kMainColor,
           visualDensity: VisualDensity.adaptivePlatformDensity,
           appBarTheme: const AppBarTheme(
@@ -113,9 +115,9 @@ class MyApp extends StatelessWidget {
                       EditProductScreen(settings.arguments as Product?));
             case '/cart':
               return MaterialPageRoute(
-                  builder: (_) => CartScreen(), settings: settings);
+                  builder: (_) => const CartScreen(), settings: settings);
             case '/address':
-              return MaterialPageRoute(builder: (_) => AddressScreen());
+              return MaterialPageRoute(builder: (_) => const AddressScreen());
             case '/checkout':
               return MaterialPageRoute(builder: (_) => CheckoutScreen());
             case '/confirmation':
