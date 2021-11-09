@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/common/price_card.dart';
-import 'package:queromaisvegano/models/cart_manager.dart';
 import 'package:provider/provider.dart';
+import 'package:queromaisvegano/app/common/price_card.dart';
+import 'package:queromaisvegano/app/modules/cart/cart_manager.dart';
 
 import 'components/address_card.dart';
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/common/custom_drawer/custom_drawer_header.dart';
-import 'package:queromaisvegano/const.dart';
-import 'package:queromaisvegano/models/user_manager.dart';
+import 'package:queromaisvegano/app/helpers/const.dart';
 import 'package:provider/provider.dart';
+import 'package:queromaisvegano/app/repositories/user_manager.dart';
+import 'custom_drawer_header.dart';
 import 'drawer_tile.dart';
 
 class CustomDrawer extends StatelessWidget {

@@ -1,12 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:queromaisvegano/models/cart_product.dart';
-import 'package:queromaisvegano/models/product.dart';
-import 'package:queromaisvegano/models/user_manager.dart';
-import 'package:queromaisvegano/services/cepaberto_service.dart';
-import 'address.dart';
-import 'user.dart';
+import 'package:queromaisvegano/app/models/cart_product.dart';
+import 'package:queromaisvegano/app/models/product.dart';
+import 'package:queromaisvegano/app/repositories/user_manager.dart';
+import 'package:queromaisvegano/app/services/cepaberto_service.dart';
+import '../../models/address.dart';
+import '../../models/user.dart';
 
 class CartManager extends ChangeNotifier {
   List<CartProduct> items = [];

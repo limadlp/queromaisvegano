@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/const.dart';
-import 'package:queromaisvegano/models/product.dart';
-import 'package:queromaisvegano/models/product_manager.dart';
+import 'package:queromaisvegano/app/helpers/const.dart';
 import 'package:provider/provider.dart';
+import 'package:queromaisvegano/app/models/product.dart';
+import 'package:queromaisvegano/app/modules/product/product_manager.dart';
 
 import 'components/images_form.dart';
 import 'components/sizes_form.dart';

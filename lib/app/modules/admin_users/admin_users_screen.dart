@@ -1,10 +1,11 @@
 import 'package:alphabet_list_scroll_view/alphabet_list_scroll_view.dart';
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/common/custom_drawer/custom_drawer.dart';
-import 'package:queromaisvegano/models/admin_orders_manager.dart';
-import 'package:queromaisvegano/models/admin_users_manager.dart';
-import 'package:queromaisvegano/models/page_manager.dart';
 import 'package:provider/provider.dart';
+import 'package:queromaisvegano/app/common/custom_drawer/custom_drawer.dart';
+import 'package:queromaisvegano/app/models/page_manager.dart';
+import 'package:queromaisvegano/app/modules/admin_orders/admin_orders_manager.dart';
+
+import 'admin_users_manager.dart';
 
 class AdminUsersScreen extends StatelessWidget {
   const AdminUsersScreen({Key? key}) : super(key: key);

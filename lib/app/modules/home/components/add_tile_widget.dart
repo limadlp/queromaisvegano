@@ -2,10 +2,10 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/models/section.dart';
-import 'package:queromaisvegano/models/section_item.dart';
-import 'package:queromaisvegano/screens/edit_product/components/image_source_sheet.dart';
 import 'package:provider/provider.dart';
+import 'package:queromaisvegano/app/models/section.dart';
+import 'package:queromaisvegano/app/models/section_item.dart';
+import 'package:queromaisvegano/app/modules/edit_product/components/image_source_sheet.dart';
 
 class AddTileWidget extends StatelessWidget {
   const AddTileWidget({Key? key}) : super(key: key);

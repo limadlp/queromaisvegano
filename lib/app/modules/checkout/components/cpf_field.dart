@@ -1,8 +1,8 @@
 import 'package:brasil_fields/brasil_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:queromaisvegano/models/user_manager.dart';
 import 'package:provider/provider.dart';
+import 'package:queromaisvegano/app/repositories/user_manager.dart';
 
 class CpfField extends StatelessWidget {
   const CpfField({Key? key}) : super(key: key);

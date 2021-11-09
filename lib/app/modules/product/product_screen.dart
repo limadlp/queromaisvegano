@@ -1,9 +1,9 @@
 import 'package:another_carousel_pro/another_carousel_pro.dart';
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/models/cart_manager.dart';
-import 'package:queromaisvegano/models/product.dart';
-import 'package:queromaisvegano/models/user_manager.dart';
 import 'package:provider/provider.dart';
+import 'package:queromaisvegano/app/models/product.dart';
+import 'package:queromaisvegano/app/modules/cart/cart_manager.dart';
+import 'package:queromaisvegano/app/repositories/user_manager.dart';
 
 import 'components/size_widget.dart';
 

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:queromaisvegano/models/home_manager.dart';
-import 'package:queromaisvegano/models/section.dart';
-import 'package:queromaisvegano/screens/home/components/add_tile_widget.dart';
-import 'package:queromaisvegano/screens/home/components/section_header.dart';
 import 'package:provider/provider.dart';
+import 'package:queromaisvegano/app/models/section.dart';
+import 'package:queromaisvegano/app/modules/home/components/section_header.dart';
 
+import '../home_manager.dart';
+import 'add_tile_widget.dart';
 import 'item_tile.dart';
 
 class SectionStaggered extends StatelessWidget {

@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:queromaisvegano/services/cielo_payment.dart';
+import 'package:queromaisvegano/app/services/cielo_payment.dart';
 
 import 'address.dart';
-import 'cart_manager.dart';
+import '../modules/cart/cart_manager.dart';
 import 'cart_product.dart';
 
 enum Status { canceled, preparing, transporting, delivered }

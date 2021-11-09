@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/common/empty_card.dart';
-import 'package:queromaisvegano/common/login_card.dart';
-import 'package:queromaisvegano/common/price_card.dart';
-import 'package:queromaisvegano/models/cart_manager.dart';
 import 'package:provider/provider.dart';
+import 'package:queromaisvegano/app/common/empty_card.dart';
+import 'package:queromaisvegano/app/common/login_card.dart';
+import 'package:queromaisvegano/app/common/price_card.dart';
 
+import 'cart_manager.dart';
 import 'components/cart_tile.dart';
 
 class CartScreen extends StatelessWidget {

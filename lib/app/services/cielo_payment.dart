@@ -2,9 +2,9 @@ import 'dart:collection';
 
 import 'package:cloud_functions/cloud_functions.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:queromaisvegano/const.dart';
-import 'package:queromaisvegano/models/credit_card.dart';
-import 'package:queromaisvegano/models/user.dart';
+import 'package:queromaisvegano/app/helpers/const.dart';
+import 'package:queromaisvegano/app/models/credit_card.dart';
+import 'package:queromaisvegano/app/models/user.dart';
 
 class CieloPayment {
   final FirebaseFunctions functions = FirebaseFunctions.instance;

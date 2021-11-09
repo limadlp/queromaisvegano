@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/models/cart_product.dart';
+import 'package:queromaisvegano/app/models/cart_product.dart';
 
 class OrderProductTile extends StatelessWidget {
   const OrderProductTile(this.cartProduct, {Key? key}) : super(key: key);

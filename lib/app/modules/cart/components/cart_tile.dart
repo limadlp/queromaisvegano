@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/common/custom_icon_button.dart';
-import 'package:queromaisvegano/models/cart_product.dart';
 import 'package:provider/provider.dart';
+import 'package:queromaisvegano/app/common/custom_icon_button.dart';
+import 'package:queromaisvegano/app/models/cart_product.dart';
 
 class CartTile extends StatelessWidget {
   const CartTile(this.cartProduct, {Key? key}) : super(key: key);

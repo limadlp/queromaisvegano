@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/models/address.dart';
-import 'package:queromaisvegano/models/cart_manager.dart';
 import 'package:provider/provider.dart';
+import 'package:queromaisvegano/app/models/address.dart';
+import 'package:queromaisvegano/app/modules/cart/cart_manager.dart';
 
 import 'address_input_field.dart';
 import 'cep_input_field.dart';

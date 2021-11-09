@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:queromaisvegano/models/product.dart';
+import 'package:queromaisvegano/app/models/product.dart';
 
 class ProductManager extends ChangeNotifier {
   ProductManager() {

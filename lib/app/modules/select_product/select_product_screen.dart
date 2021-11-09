@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/models/product_manager.dart';
 import 'package:provider/provider.dart';
+import 'package:queromaisvegano/app/modules/product/product_manager.dart';
 
 class SelectProductScreen extends StatelessWidget {
   const SelectProductScreen({Key? key}) : super(key: key);

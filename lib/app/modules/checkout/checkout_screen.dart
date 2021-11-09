@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/common/price_card.dart';
-import 'package:queromaisvegano/models/cart_manager.dart';
-import 'package:queromaisvegano/models/checkout_manager.dart';
-import 'package:queromaisvegano/models/credit_card.dart';
 import 'package:provider/provider.dart';
+import 'package:queromaisvegano/app/common/price_card.dart';
+import 'package:queromaisvegano/app/models/credit_card.dart';
+import 'package:queromaisvegano/app/modules/cart/cart_manager.dart';
 
+import 'checkout_manager.dart';
 import 'components/cpf_field.dart';
 import 'components/credit_card_widget.dart';
 

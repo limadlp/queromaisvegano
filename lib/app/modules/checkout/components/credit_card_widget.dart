@@ -1,9 +1,10 @@
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:keyboard_actions/keyboard_actions.dart';
-import 'package:queromaisvegano/models/credit_card.dart';
-import 'package:queromaisvegano/screens/checkout/components/card_back.dart';
-import 'package:queromaisvegano/screens/checkout/components/card_front.dart';
+import 'package:queromaisvegano/app/models/credit_card.dart';
+
+import 'card_back.dart';
+import 'card_front.dart';
 
 class CreditCardWidget extends StatefulWidget {
   const CreditCardWidget(this.creditCard, {Key? key}) : super(key: key);

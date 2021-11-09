@@ -2,8 +2,8 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
-import 'package:queromaisvegano/const.dart';
-import 'package:queromaisvegano/models/address.dart';
+import 'package:queromaisvegano/app/helpers/const.dart';
+import 'package:queromaisvegano/app/models/address.dart';
 import 'package:screenshot/screenshot.dart';
 
 class ExportAddressDialog extends StatelessWidget {

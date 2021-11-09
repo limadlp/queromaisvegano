@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:queromaisvegano/models/user.dart';
-import 'package:queromaisvegano/models/user_manager.dart';
+import 'package:queromaisvegano/app/models/user.dart';
+import 'package:queromaisvegano/app/repositories/user_manager.dart';
 
 class AdminUsersManager extends ChangeNotifier {
   List<Usuario>? users = [];

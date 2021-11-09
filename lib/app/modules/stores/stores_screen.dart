@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/common/custom_drawer/custom_drawer.dart';
-import 'package:queromaisvegano/models/stores_manager.dart';
 import 'package:provider/provider.dart';
+import 'package:queromaisvegano/app/common/custom_drawer/custom_drawer.dart';
+import 'package:queromaisvegano/app/modules/stores/stores_manager.dart';
 
 import 'components/store_card.dart';
 

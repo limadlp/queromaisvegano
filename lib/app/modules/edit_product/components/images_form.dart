@@ -3,8 +3,8 @@ import 'dart:io';
 import 'package:another_carousel_pro/another_carousel_pro.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/const.dart';
-import 'package:queromaisvegano/models/product.dart';
+import 'package:queromaisvegano/app/helpers/const.dart';
+import 'package:queromaisvegano/app/models/product.dart';
 
 import 'image_source_sheet.dart';
 

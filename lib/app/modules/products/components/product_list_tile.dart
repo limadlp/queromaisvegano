@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/models/product.dart';
+import 'package:queromaisvegano/app/models/product.dart';
 
 class ProductListTile extends StatelessWidget {
   const ProductListTile(this.product, {Key? key}) : super(key: key);

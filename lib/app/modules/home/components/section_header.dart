@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/common/custom_icon_button.dart';
-import 'package:queromaisvegano/models/home_manager.dart';
-import 'package:queromaisvegano/models/section.dart';
 import 'package:provider/provider.dart';
+import 'package:queromaisvegano/app/common/custom_icon_button.dart';
+import 'package:queromaisvegano/app/models/section.dart';
+
+import '../home_manager.dart';
 
 class SectionHeader extends StatelessWidget {
   const SectionHeader({Key? key}) : super(key: key);

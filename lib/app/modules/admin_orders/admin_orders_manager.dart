@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:queromaisvegano/models/user.dart';
+import 'package:queromaisvegano/app/models/user.dart';
 
-import 'order.dart';
+import '../../models/order.dart';
 
 class AdminOrdersManager extends ChangeNotifier {
   Usuario? user;

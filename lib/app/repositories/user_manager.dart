@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:queromaisvegano/helpers/firebase_errors.dart';
-import 'package:queromaisvegano/models/user.dart';
+import 'package:queromaisvegano/app/helpers/firebase_errors.dart';
+import 'package:queromaisvegano/app/models/user.dart';
 
 class UserManager extends ChangeNotifier {
   UserManager() {

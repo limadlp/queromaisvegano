@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/helpers/validators.dart';
-import 'package:queromaisvegano/models/user.dart';
-import 'package:queromaisvegano/models/user_manager.dart';
 import 'package:provider/provider.dart';
+import 'package:queromaisvegano/app/helpers/validators.dart';
+import 'package:queromaisvegano/app/models/user.dart';
+import 'package:queromaisvegano/app/repositories/user_manager.dart';
 
 class SignUpScreen extends StatelessWidget {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();

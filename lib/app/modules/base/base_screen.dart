@@ -4,15 +4,15 @@ import 'package:another_flushbar/flushbar.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:queromaisvegano/models/page_manager.dart';
-import 'package:queromaisvegano/models/user_manager.dart';
-import 'package:queromaisvegano/screens/admin_orders/admin_orders_screen.dart';
-import 'package:queromaisvegano/screens/admin_users/admin_users_screen.dart';
-import 'package:queromaisvegano/screens/home/home_screen.dart';
-import 'package:queromaisvegano/screens/orders/orders_screen.dart';
-import 'package:queromaisvegano/screens/products/products_screen.dart';
-import 'package:queromaisvegano/screens/stores/stores_screen.dart';
 import 'package:provider/provider.dart';
+import 'package:queromaisvegano/app/models/page_manager.dart';
+import 'package:queromaisvegano/app/modules/admin_orders/admin_orders_screen.dart';
+import 'package:queromaisvegano/app/modules/admin_users/admin_users_screen.dart';
+import 'package:queromaisvegano/app/modules/home/home_screen.dart';
+import 'package:queromaisvegano/app/modules/orders/orders_screen.dart';
+import 'package:queromaisvegano/app/modules/products/products_screen.dart';
+import 'package:queromaisvegano/app/modules/stores/stores_screen.dart';
+import 'package:queromaisvegano/app/repositories/user_manager.dart';
 
 class BaseScreen extends StatefulWidget {
   const BaseScreen({Key? key}) : super(key: key);

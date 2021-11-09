@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:queromaisvegano/models/section.dart';
+import 'package:queromaisvegano/app/models/section.dart';
 
 class HomeManager extends ChangeNotifier {
   HomeManager() {

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/common/custom_drawer/custom_drawer.dart';
-import 'package:queromaisvegano/const.dart';
-import 'package:queromaisvegano/models/home_manager.dart';
-import 'package:queromaisvegano/models/user_manager.dart';
+import 'package:queromaisvegano/app/common/custom_drawer/custom_drawer.dart';
+import 'package:queromaisvegano/app/helpers/const.dart';
 import 'package:provider/provider.dart';
+import 'package:queromaisvegano/app/repositories/user_manager.dart';
 
 import 'components/add_section_widget.dart';
 import 'components/section_list.dart';
 import 'components/section_staggered.dart';
+import 'home_manager.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);

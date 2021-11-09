@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'dart:io';
 
-import 'package:queromaisvegano/models/cepaberto_address.dart';
+import 'package:queromaisvegano/app/models/cepaberto_address.dart';
 
 const token = '1b1577a29bbf17604b06a5802856c4bc';
 

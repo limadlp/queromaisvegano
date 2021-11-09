@@ -2,10 +2,11 @@ import 'package:brasil_fields/brasil_fields.dart';
 import 'package:credit_card_type_detector/credit_card_type_detector.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:queromaisvegano/const.dart';
-import 'package:queromaisvegano/models/credit_card.dart';
-import 'package:queromaisvegano/screens/checkout/components/card_text_field.dart';
+import 'package:queromaisvegano/app/helpers/const.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:queromaisvegano/app/models/credit_card.dart';
+
+import 'card_text_field.dart';
 
 class CardFront extends StatelessWidget {
   CardFront({

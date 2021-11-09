@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:queromaisvegano/models/product.dart';
 
 import 'item_size.dart';
+import 'product.dart';
 
 class CartProduct extends ChangeNotifier {
   CartProduct.fromProduct(this._product) {

@@ -1,13 +1,14 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/models/home_manager.dart';
-import 'package:queromaisvegano/models/product.dart';
-import 'package:queromaisvegano/models/product_manager.dart';
-import 'package:queromaisvegano/models/section.dart';
-import 'package:queromaisvegano/models/section_item.dart';
 import 'package:provider/provider.dart';
+import 'package:queromaisvegano/app/models/product.dart';
+import 'package:queromaisvegano/app/models/section.dart';
+import 'package:queromaisvegano/app/models/section_item.dart';
+import 'package:queromaisvegano/app/modules/product/product_manager.dart';
 import 'package:transparent_image/transparent_image.dart';
+
+import '../home_manager.dart';
 
 class ItemTile extends StatelessWidget {
   const ItemTile(this.item, {Key? key}) : super(key: key);

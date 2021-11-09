@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:queromaisvegano/models/credit_card.dart';
-import 'package:queromaisvegano/screens/checkout/components/card_text_field.dart';
-
-import '../../../const.dart';
+import 'package:queromaisvegano/app/helpers/const.dart';
+import 'package:queromaisvegano/app/models/credit_card.dart';
+import 'package:queromaisvegano/app/modules/checkout/components/card_text_field.dart';
 
 class CardBack extends StatelessWidget {
   const CardBack({Key? key, required this.cvvFocus, this.creditCard})

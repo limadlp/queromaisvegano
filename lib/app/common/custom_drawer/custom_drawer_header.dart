@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/const.dart';
-import 'package:queromaisvegano/models/page_manager.dart';
-import 'package:queromaisvegano/models/user_manager.dart';
+import 'package:queromaisvegano/app/helpers/const.dart';
 import 'package:provider/provider.dart';
+import 'package:queromaisvegano/app/models/page_manager.dart';
+import 'package:queromaisvegano/app/repositories/user_manager.dart';
 
 class CustomDrawerHeader extends StatelessWidget {
   const CustomDrawerHeader({Key? key}) : super(key: key);

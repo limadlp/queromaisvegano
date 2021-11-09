@@ -1,10 +1,10 @@
 import 'package:brasil_fields/brasil_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:queromaisvegano/common/custom_icon_button.dart';
-import 'package:queromaisvegano/models/address.dart';
-import 'package:queromaisvegano/models/cart_manager.dart';
 import 'package:provider/provider.dart';
+import 'package:queromaisvegano/app/common/custom_icon_button.dart';
+import 'package:queromaisvegano/app/models/address.dart';
+import 'package:queromaisvegano/app/modules/cart/cart_manager.dart';
 
 class CepInputField extends StatefulWidget {
   const CepInputField(this.address, {Key? key}) : super(key: key);

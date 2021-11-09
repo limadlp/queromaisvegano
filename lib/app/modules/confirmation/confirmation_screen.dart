@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/models/order.dart';
-import 'package:queromaisvegano/common/order/order_product_tile.dart';
+import 'package:queromaisvegano/app/common/order/order_product_tile.dart';
+import 'package:queromaisvegano/app/models/order.dart';
 
 class ConfirmationScreen extends StatelessWidget {
   const ConfirmationScreen(this.order, {Key? key}) : super(key: key);

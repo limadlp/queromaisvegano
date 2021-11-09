@@ -1,11 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:queromaisvegano/models/cart_manager.dart';
-import 'package:queromaisvegano/models/product.dart';
-import 'package:queromaisvegano/services/cielo_payment.dart';
+import 'package:queromaisvegano/app/models/product.dart';
+import 'package:queromaisvegano/app/modules/cart/cart_manager.dart';
+import 'package:queromaisvegano/app/services/cielo_payment.dart';
 
-import 'credit_card.dart';
-import 'order.dart';
+import '../../models/credit_card.dart';
+import '../../models/order.dart';
 
 class CheckoutManager extends ChangeNotifier {
   CartManager? cartManager;

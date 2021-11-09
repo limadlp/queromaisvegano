@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/common/custom_icon_button.dart';
-import 'package:queromaisvegano/models/item_size.dart';
-import 'package:queromaisvegano/models/product.dart';
+import 'package:queromaisvegano/app/common/custom_icon_button.dart';
+import 'package:queromaisvegano/app/models/item_size.dart';
+import 'package:queromaisvegano/app/models/product.dart';
 
 import 'edit_item_size.dart';
 

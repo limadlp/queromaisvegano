@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/const.dart';
+import 'package:queromaisvegano/app/helpers/const.dart';
 import 'package:provider/provider.dart';
 import '../../models/page_manager.dart';
 

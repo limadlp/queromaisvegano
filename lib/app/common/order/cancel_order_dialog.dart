@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/models/order.dart';
+import 'package:queromaisvegano/app/models/order.dart';
 
 class CancelOrderDialog extends StatefulWidget {
   const CancelOrderDialog(this.order, {Key? key}) : super(key: key);

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/models/home_manager.dart';
-import 'package:queromaisvegano/models/section.dart';
 import 'package:provider/provider.dart';
+import 'package:queromaisvegano/app/models/section.dart';
+
+import '../home_manager.dart';
 
 class AddSectionWidget extends StatelessWidget {
   const AddSectionWidget({Key? key}) : super(key: key);

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/models/order.dart';
+import 'package:queromaisvegano/app/models/order.dart';
 
 import 'cancel_order_dialog.dart';
 import 'export_address_dialog.dart';

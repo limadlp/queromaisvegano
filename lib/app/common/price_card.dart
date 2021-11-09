@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/const.dart';
-import 'package:queromaisvegano/models/cart_manager.dart';
+import 'package:queromaisvegano/app/helpers/const.dart';
 import 'package:provider/provider.dart';
+import 'package:queromaisvegano/app/modules/cart/cart_manager.dart';
 
 class PriceCard extends StatelessWidget {
   const PriceCard({Key? key, this.buttonText, this.onPressed})

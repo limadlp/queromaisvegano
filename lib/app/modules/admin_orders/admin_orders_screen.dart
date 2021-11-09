@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/common/custom_drawer/custom_drawer.dart';
-import 'package:queromaisvegano/common/custom_icon_button.dart';
-import 'package:queromaisvegano/common/empty_card.dart';
-import 'package:queromaisvegano/models/admin_orders_manager.dart';
-import 'package:queromaisvegano/common/order/order_tile.dart';
-import 'package:queromaisvegano/models/order.dart';
 import 'package:provider/provider.dart';
+import 'package:queromaisvegano/app/common/custom_drawer/custom_drawer.dart';
+import 'package:queromaisvegano/app/common/custom_icon_button.dart';
+import 'package:queromaisvegano/app/common/empty_card.dart';
+import 'package:queromaisvegano/app/common/order/order_tile.dart';
+import 'package:queromaisvegano/app/models/order.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
+
+import 'admin_orders_manager.dart';
 
 class AdminOrdersScreen extends StatefulWidget {
   const AdminOrdersScreen({Key? key}) : super(key: key);

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/const.dart';
-import 'package:queromaisvegano/models/item_size.dart';
-import 'package:queromaisvegano/models/product.dart';
+import 'package:queromaisvegano/app/helpers/const.dart';
 import 'package:provider/provider.dart';
+import 'package:queromaisvegano/app/models/item_size.dart';
+import 'package:queromaisvegano/app/models/product.dart';
 
 class SizeWidget extends StatelessWidget {
   const SizeWidget({Key? key, required this.size}) : super(key: key);

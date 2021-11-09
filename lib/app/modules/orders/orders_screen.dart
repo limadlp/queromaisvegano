@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:queromaisvegano/common/custom_drawer/custom_drawer.dart';
-import 'package:queromaisvegano/common/empty_card.dart';
-import 'package:queromaisvegano/common/login_card.dart';
-import 'package:queromaisvegano/models/orders_manager.dart';
 import 'package:provider/provider.dart';
+import 'package:queromaisvegano/app/common/custom_drawer/custom_drawer.dart';
+import 'package:queromaisvegano/app/common/empty_card.dart';
+import 'package:queromaisvegano/app/common/login_card.dart';
+import 'package:queromaisvegano/app/modules/orders/orders_manager.dart';
 
 import '../../common/order/order_tile.dart';
 

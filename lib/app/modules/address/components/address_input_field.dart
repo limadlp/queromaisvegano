@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:queromaisvegano/models/address.dart';
-import 'package:queromaisvegano/models/cart_manager.dart';
 import 'package:provider/provider.dart';
+import 'package:queromaisvegano/app/models/address.dart';
+import 'package:queromaisvegano/app/modules/cart/cart_manager.dart';
 
 class AddressInputField extends StatelessWidget {
   const AddressInputField(this.address, {Key? key}) : super(key: key);
